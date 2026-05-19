@@ -46,7 +46,7 @@ railway.json
 cp server/.env.example server/.env
 ```
 
-3. Configura `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` y `JWT_SECRET` en `server/.env`.
+3. Configura `SUPABASE_URL`, `SUPABASE_SECRET_KEY` y `JWT_SECRET` en `server/.env`.
 4. Instala dependencias:
 
 ```bash
@@ -84,7 +84,7 @@ git push -u origin main
 
 ```txt
 SUPABASE_URL=https://tu-proyecto.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=tu-service-role-o-secret-key
+SUPABASE_SECRET_KEY=tu-sb-secret-key
 JWT_SECRET=un-secreto-largo-y-privado
 ADMIN_USER=admin
 ADMIN_PREFIX=admin
@@ -108,12 +108,12 @@ Start: npm start
 3. Crea un nuevo query.
 4. Pega el contenido de [supabase/schema.sql](/C:/Users/3650428/Control-Asistencia-Eventos/supabase/schema.sql).
 5. Ejecuta el query completo.
-6. Ve a `Project Settings` > `API`.
+6. Ve a `Project Settings` > `API Keys`.
 7. Copia `Project URL` en `SUPABASE_URL`.
-8. Copia `service_role` o `secret key` en `SUPABASE_SERVICE_ROLE_KEY`.
+8. Crea o copia una `secret key` con formato `sb_secret_...` y guardala como `SUPABASE_SECRET_KEY`.
 9. Agrega esas variables en Railway.
 
-La llave `service_role` o `secret key` debe vivir solo en Railway o en `server/.env`. No la pongas en `client/.env`, GitHub, ni codigo frontend.
+Si tu panel aun no muestra secret keys, puedes usar la llave legacy `service_role` en la variable `SUPABASE_SERVICE_ROLE_KEY`. Cualquiera de estas llaves elevadas debe vivir solo en Railway o en `server/.env`. No la pongas en `client/.env`, GitHub, ni codigo frontend.
 
 ## Uso administrativo
 
